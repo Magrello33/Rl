@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Novas Ideias para São Paulo</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --roxo:#241044;
+  --roxo2:#42157d;
+  --roxo3:#6825a8;
+  --amarelo:#ffd400;
+  --amarelo2:#ffea70;
+  --branco:#fff;
+  --escuro:#171022;
+  --cinza:#6d6875;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:var(--escuro);
+  overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  background:var(--roxo);
+  color:#fff;
+  display:flex;
+  align-items:center;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:650px;
+  height:650px;
+  border-radius:50%;
+  background:var(--amarelo);
+  right:-260px;
+  top:-220px;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:var(--roxo3);
+  left:-180px;
+  bottom:-180px;
+}
+
+.hero-content{
+  width:100%;
+  max-width:1250px;
+  margin:auto;
+  padding:70px 30px;
+  position:relative;
+  z-index:2;
+}
+
+.mini{
+  display:inline-block;
+  background:var(--amarelo);
+  color:var(--roxo);
+  padding:10px 18px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  max-width:900px;
+  font-size:clamp(55px,9vw,115px);
+  line-height:.84;
+  letter-spacing:-6px;
+  text-transform:uppercase;
+  font-weight:950;
+}
+
+.hero h1 span{
+  color:var(--amarelo);
+}
+
+.hero-text{
+  max-width:650px;
+  margin-top:30px;
+  color:#eee9f6;
+  font-size:20px;
+  line-height:1.55;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:35px;
+}
+
+.btn{
+  display:inline-block;
+  padding:17px 28px;
+  border-radius:7px;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:1px;
+  transition:.25s;
+}
+
+.btn-yellow{
+  background:var(--amarelo);
+  color:var(--roxo);
+}
+
+.btn-yellow:hover{
+  transform:translateY(-3px);
+}
+
+.btn-white{
+  border:2px solid #fff;
+  color:#fff;
+}
+
+.btn-white:hover{
+  background:#fff;
+  color:var(--roxo);
+}
+
+/* FAIXA */
+
+.ribbon{
+  background:var(--amarelo);
+  color:var(--roxo);
+  padding:18px;
+  text-align:center;
+  font-size:clamp(17px,3vw,27px);
+  font-weight:950;
+  text-transform:uppercase;
+}
+
+/* INTRO */
+
+.intro{
+  padding:90px 25px 50px;
+  text-align:center;
+}
+
+.kicker{
+  color:var(--roxo3);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.intro h2{
+  max-width:900px;
+  margin:15px auto;
+  font-size:clamp(40px,6vw,70px);
+  line-height:.95;
+  text-transform:uppercase;
+}
+
+.intro h2 span{
+  color:var(--roxo3);
+}
+
+.intro p{
+  max-width:720px;
+  margin:auto;
+  color:var(--cinza);
+  font-size:18px;
+  line-height:1.7;
+}
+
+/* CANDIDATOS */
+
+.candidates{
+  max-width:1200px;
+  margin:auto;
+  padding:45px 25px 100px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  border-radius:25px;
+  background:var(--roxo);
+  color:#fff;
+  box-shadow:0 20px 50px rgba(36,16,68,.18);
+}
+
+.card:nth-child(2){
+  background:var(--roxo3);
+}
+
+/* FOTO CORRIGIDA */
+
+.photo{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+}
+
+/* FIM DA CORREÇÃO */
+
+.card-body{
+  padding:30px;
+  position:relative;
+}
+
+.cargo{
+  color:var(--amarelo);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.card h3{
+  margin-top:8px;
+  font-size:clamp(35px,5vw,58px);
+  line-height:.9;
+  text-transform:uppercase;
+}
+
+.number{
+  display:inline-block;
+  margin-top:20px;
+  padding:7px 18px;
+  background:var(--amarelo);
+  color:var(--roxo);
+  border-radius:7px;
+  font-size:44px;
+  font-weight:950;
+}
+
+.instagram{
+  display:block;
+  margin-top:16px;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* DESTAQUE */
+
+.highlight{
+  background:var(--amarelo);
+  padding:90px 25px;
+  text-align:center;
+  color:var(--roxo);
+}
+
+.highlight h2{
+  max-width:1000px;
+  margin:auto;
+  font-size:clamp(40px,7vw,85px);
+  line-height:.9;
+  letter-spacing:-3px;
+  text-transform:uppercase;
+}
+
+.highlight p{
+  max-width:700px;
+  margin:25px auto 0;
+  font-size:18px;
+  line-height:1.6;
+}
+
+/* PROPOSTAS */
+
+.proposals{
+  background:#f7f4fb;
+  padding:90px 25px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  font-size:clamp(38px,6vw,65px);
+  text-transform:uppercase;
+  line-height:.95;
+}
+
+.section-title span{
+  color:var(--roxo3);
+}
+
+.grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.box{
+  background:#fff;
+  border-radius:18px;
+  padding:30px;
+  min-height:190px;
+  border:1px solid #e9e1f4;
+}
+
+.box-number{
+  color:var(--roxo3);
+  font-size:13px;
+  font-weight:950;
+  margin-bottom:18px;
+}
+
+.box h3{
+  color:var(--roxo);
+  font-size:20px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.box p{
+  color:var(--cinza);
+  line-height:1.6;
+}
+
+/* PARTICIPAÇÃO */
+
+.participate{
+  padding:110px 25px;
+  background:
+    radial-gradient(circle at 85% 20%,var(--roxo3),transparent 35%),
+    var(--roxo);
+  color:#fff;
+  text-align:center;
+}
+
+.participate-content{
+  max-width:950px;
+  margin:auto;
+}
+
+.participate small{
+  color:var(--amarelo);
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.participate h2{
+  margin-top:20px;
+  font-size:clamp(48px,8vw,95px);
+  line-height:.88;
+  letter-spacing:-4px;
+  text-transform:uppercase;
+}
+
+.participate h2 span{
+  color:var(--amarelo);
+}
+
+.participate p{
+  max-width:680px;
+  margin:30px auto;
+  color:#e8e2f0;
+  font-size:19px;
+  line-height:1.6;
+}
+
+/* FOOTER */
+
+footer{
+  background:#120821;
+  color:#aaa0b8;
+  text-align:center;
+  padding:35px 20px;
+  font-size:13px;
+  line-height:1.7;
+}
+
+footer strong{
+  color:#fff;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:850px){
+
+  .hero{
+    min-height:90vh;
+  }
+
+  .hero::before{
+    width:400px;
+    height:400px;
+    right:-220px;
+    top:-180px;
+  }
+
+  .hero-content{
+    padding:55px 22px;
+  }
+
+  .hero h1{
+    letter-spacing:-3px;
+  }
+
+  .candidates{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:550px){
+
+  .hero{
+    min-height:100svh;
+  }
+
+  .hero h1{
+    font-size:clamp(50px,15vw,78px);
+  }
+
+  .hero-text{
+    font-size:17px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .hero-buttons .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  /* NÃO LIMITA MAIS A ALTURA DA FOTO */
+
+  .photo{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+  }
+
+  .card-body{
+    padding:25px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .highlight{
+    padding:75px 20px;
+  }
+
+  .participate{
+    padding:85px 20px;
+  }
+
+  .participate h2{
+    letter-spacing:-2px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="mini">
+      São Paulo em movimento
+    </div>
+
+    <h1>
+      Novas ideias<br>
+      <span>para São Paulo.</span>
+    </h1>
+
+    <p class="hero-text">
+      Conheça Aline Teixeira e Rogério Franco,
+      suas trajetórias, propostas e informações eleitorais.
+      Uma página para você conhecer melhor as candidaturas.
+    </p>
+
+    <div class="hero-buttons">
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FAIXA -->
+
+<div class="ribbon">
+  Conheça • Compare • Participe
+</div>
+
+<!-- INTRO -->
+
+<section class="intro">
+
+  <div class="kicker">
+    Informação para o eleitor
+  </div>
+
+  <h2>
+    Duas candidaturas.<br>
+    <span>Novas perspectivas.</span>
+  </h2>
+
+  <p>
+    Novas ideias. Conheça Aline Teixeira e Rogério Franco
+  </p>
+
+</section>
+
+<!-- CANDIDATOS -->
+
+<section class="candidates" id="candidatos">
+
+  <article class="card">
+
+    <img
+      src="ll.png"
+      alt="Aline Teixeira"
+      class="photo"
+    >
+
+    <div class="card-body">
+
+      <div class="cargo">
+        Deputada Federal
+      </div>
+
+      <h3>
+        Aline<br>
+        Teixeira
+      </h3>
+
+      <div class="number">
+        4456
+      </div>
+
+      <a
+        href="https://instagram.com/alineteixeira.oficial"
+        target="_blank"
+        class="instagram"
+      >
+        @alineteixeira.oficial
+      </a>
+
+    </div>
+
+  </article>
+
+  <article class="card">
+
+    <img
+      src="rr.png"
+      alt="Rogério Franco"
+      class="photo"
+    >
+
+    <div class="card-body">
+
+      <div class="cargo">
+        Deputado Estadual
+      </div>
+
+      <h3>
+        Rogério<br>
+        Franco
+      </h3>
+
+      <div class="number">
+        22999
+      </div>
+
+      <a
+        href="https://instagram.com/rogeriofranco_sp"
+        target="_blank"
+        class="instagram"
+      >
+        @rogeriofranco_sp
+      </a>
+
+    </div>
+
+  </article>
+
+</section>
+
+<!-- DESTAQUE -->
+
+<section class="highlight">
+
+  <h2>
+    São Paulo merece<br>
+    <strong>novas perspectivas.</strong>
+  </h2>
+
+  <p>
+    Conheça as ideias apresentadas pelos candidatos e
+    acompanhe suas trajetórias e propostas.
+  </p>
+
+</section>
+
+<!-- PROPOSTAS -->
+
+<section class="proposals" id="propostas">
+
+  <div class="section-title">
+
+    <h2>
+      Temas que fazem parte<br>
+      do <span>debate.</span>
+    </h2>
+
+  </div>
+
+  <div class="grid">
+
+    <div class="box">
+      <div class="box-number">01</div>
+      <h3>Segurança</h3>
+      <p>
+        Conheça as propostas e posicionamentos apresentados
+        sobre segurança pública.
+      </p>
+    </div>
+
+    <div class="box">
+      <div class="box-number">02</div>
+      <h3>Educação</h3>
+      <p>
+        Informações sobre ideias e propostas relacionadas
+        à educação.
+      </p>
+    </div>
+
+    <div class="box">
+      <div class="box-number">03</div>
+      <h3>Saúde</h3>
+      <p>
+        Conheça as propostas apresentadas para a área
+        da saúde.
+      </p>
+    </div>
+
+    <div class="box">
+      <div class="box-number">04</div>
+      <h3>Trabalho</h3>
+      <p>
+        Desenvolvimento, emprego, renda e oportunidades
+        estão entre os temas apresentados.
+      </p>
+    </div>
+
+    <div class="box">
+      <div class="box-number">05</div>
+      <h3>Família</h3>
+      <p>
+        Informações sobre propostas e iniciativas sociais
+        apresentadas.
+      </p>
+    </div>
+
+    <div class="box">
+      <div class="box-number">06</div>
+      <h3>São Paulo</h3>
+      <p>
+        Acompanhe as ideias apresentadas para os desafios
+        do estado.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CHAMADA FINAL -->
+
+<section class="participate">
+
+  <div class="participate-content">
+
+    <small>
+      Sua participação importa
+    </small>
+
+    <h2>
+      Seu voto.<br>
+      <span>Sua voz.</span><br>
+      Seu futuro.
+    </h2>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <strong>
+    SEU VOTO FAZ A DIFERENÇA VOTE COM CONFIANÇA
+  </strong>
+
+  <br><br>
+
+  <br>
+
+</footer>
+
+</body>
+</html>
